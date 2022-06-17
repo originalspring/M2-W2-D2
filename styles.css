@@ -4,19 +4,27 @@ header {
     min-height: 400px;
     padding-top: 3em;
 }
-#home header {
-    background:  no-repeat lightgrey url(images/cliff_ocean.jpg);
-    background-size: 1500px;
+#home {
+    background:  no-repeat white url(images/cliff_ocean.jpg);
+    background-size: 100% 400px;
     
 }
-#activities header {
+
+header{
+width:100%;
+min-height:275px;
+}
+
+
+
+#activities{
     background:  no-repeat lightgrey url(images/runfly.jpg);
-    background-size: 1500px;
+    background-size: 100% 400px;
 
 }
-#contact header {
+#contact {
     background:  no-repeat lightgrey url(images/cliff_rock.jpg);
-    background-size: 1500px;
+    background-size: 100% 400px;
     
 }
 .main-header {
