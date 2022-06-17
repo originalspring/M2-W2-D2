@@ -34,7 +34,7 @@
 <body id="contact">
 <div id="container">
     <header>
-        <div class="main-header ">
+        <div class="main-header fixed-top">
             <div class="logo">
                 <img src="images/logo.png" alt="Great Cliffs Logo" width="125">
             </div>
@@ -88,24 +88,35 @@ the Cliffs, Hours of Operations, Facilities or questions about this site using o
 </div>
 
 <form action="/contact" method="post">  
-<fieldset>  
+   
     <legend>Contact Form</legend>
+
     <div class="textbox">
+        
+            <fieldset>  
+                <div class="form-group">
         <label>Name:</label> 
         <input type="text" name="name" placeholder="John Doe">  
+        </div>
+
+        <div class="form-group">
         <label>Email:</label>  
         <input type="email" name="email" placeholder="johndoe@gmail.com"> 
+    </div>
+
+    <div class="form-group">
         <label>Phone:</label>
         <input type="text" name="phone" placeholder="xxx-xxx-xxxx"> 
     </div>
     
-    <div class="radios">
+
+    <div class="radios form-group">
         <label>How should we contact you?</label>  
         <input type="radio" name="contact" value="email" checked>Email 
         <input type="radio" name="contact" value="phone">Phone
     </div>
 
-    <div class="selectmenu">
+    <div class="selectmenu form-group">
         <label>Which Cliff are you inquiring?</label>  
         <select>
             <option>West Cliff</option>
@@ -115,7 +126,7 @@ the Cliffs, Hours of Operations, Facilities or questions about this site using o
         </select>
     </div>
     
-    <div class="commentbox">
+    <div class="commentbox form-group">
         <label>How did you hear about us:</label>  
         <textarea></textarea>
     </div>
@@ -130,6 +141,7 @@ the Cliffs, Hours of Operations, Facilities or questions about this site using o
     </button>
 
 </fieldset>  
+
 </form>
     </main>
     <section>

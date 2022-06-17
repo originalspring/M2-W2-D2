@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta charset="UTF-8">
+   <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+     <link rel="stylesheet" href="styles.css">
+
+
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+     <script src="js/site_scripts.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+     <script>
+
+        $(document).ready(function() {
+            $("td").click(function() {
+
+                $(".tbclick").addClass("clickcolorchange");
+            
+            });
+        });
+     
+         $(document).ready(function(){
+             $("td").click(function(){
+                 var content = $(this).text();
+
+                 if (content !="Not Availble"){
+                     $(this).toggleClass("tdhighlight");
+
+                        if($(this).hasClass("tdhighlight")){
+                            $("#displaySelected").css("visibility","visible");
+                            $("#displaySelected").css("margin-top","2em");
+                            $("#result").append("<p>" + content + "</p>");
+                        } else{
+                            $('#result p:contains('+content+')').remove();
+
+                            if($("#result").has("p").length == false) {
+                                $("#displaySelected").css('visibility','hidden');
+                                $('#displaySelected').css("margin-top","0");
+                            }
+                        }
+                 }
+             });
+         });
+ 
+
+        </script>
+
+</head>
+<body id="activities">
+    <div id="container">
+        <header>
+            <div class="main-header fixed-top">
+                <div class="logo">
+                    <img src="images/logo.png" alt="Great Cliffs Logo" width="125">
+                </div>
+                <nav nav class = "navbar navbar-expand-lg navbar-brand navbar-dark">
+                    <button class = "navbar-toggler" type = "button" data-toggle = "collapse" 
+                    data-target = "#navbarNavDropdown" aria-controls = "navbarNavDropdown" 
+                    aria-expanded = "false" aria-label = "Toggle navigation">
+                    
+                    <span class="navbar-toggler-icon"></span>
+                 </button>
+                 
+                 <div class = "collapse navbar-collapse" id = "navbarNavDropdown">
+                    <ul class = "navbar-nav">
+                       <li class = "nav-item active">
+                          <a class = "nav-link text-secondary " href = "#">Home</a>
+                       </li>
+                       <li class = "nav-item dropdown">
+                          <a class = "nav-link text-secondary" href = "#">Cliff</a>
+                       </li>
+                       <li class = "nav-item">
+                          <a class = "nav-link active" href = "#">Activities</a>
+                       </li>
+                       <li class = "nav-item">
+                        <a class = "nav-link text-secondary" href = "#">Contact</a>
+                     </li>
+                </nav>
+            </div>
+        </header>
+    <main>
+        <h1>Activities</h1>
+        <p>There are many planned activities at all the cliff sites. 
+            Some are scheduled daily, weekly, monthly and yearly. These
+             activities are not however run by the state park and recreational
+              department. They are operated and manage by private vendors but
+               are partners with the state department. Therefore, for schedule i
+               nquiries or information, please contact them directly. For a list of activities, please refer to the table below:
+        </p>
+        <p>Located within a 100 mile radius from Irvine, California, they can be reached by roads easily. 
+        The closest cliff to Irvine is West Cliff, which is the most popular and most visited.</p>
+    </main>
+
+<div>
+    <table class="table container-fluid">
+        <caption>Activities at the Cliffs</caption>
+        <thead>
+            <tr>
+                <th>Activity</th>
+                <th>West Cliff</th>
+                <th>North Cliff</th>
+                <th>East Cliff</th>
+                <th>South Cliff</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Hiking</td>
+                <td>College Hikes</td>
+                <td>Family Fun</td>
+                <td>Treasure Trails</td>
+                <td>Canyon Explorer</td>
+            </tr>
+            <tr>
+                <td>Kayak</td>
+                <td>Western Kayak Meetup</td>
+                <td>Not Available</td>
+                <td>Youth Kayaking</td>
+                <td>Kayak Down</td>
+            </tr>
+            <tr>
+                <td>Skydiving</td>
+                <td>Seacliff Diving</td>
+                <td>Sky is the limit</td>
+                <td>Not Available</td>
+                <td>Sky Diving for Beginners</td>
+            </tr>
+            <tr>
+                <td>Biking</td>
+                <td>Bicycle for One</td>
+                <td>Not Available</td>
+                <td>Bike Meetup Group</td>
+                <td>Not Available</td>
+            </tr>
+            <tr>
+                <td>Camping</td>
+                <td>Youth Camp</td>
+                <td>Rent a Tent</td>
+                <td>Campground Adventure</td>
+                <td>Sunset Camping</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="container"></div>
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                     <div id="displaySelected">
+   
+          
+
+                 <!-- Modal Header -->
+                 <div class="modal-header">
+                    <div id="result">
+                    <h4 class="modal-title">My selected activities to enquire:</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                </div>
+
+                  <!-- Modal body -->
+                  <div class="modal-body">
+                    <div id="sendinfo">
+                        <input type="email" placeholder="johndoe@gmail.com">
+                        <button> Get Info</button>
+                    </div> 
+                </div>
+
+                  <!-- Modal footer -->
+                  <div class="modal-footer">
+                    <p style="margin-right:300px;">Modal footer</p>
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+                </div>
+    </div>
+</div>
+</div>
+ </div>
+
+                <!-- <script>
+                $(document).ready(function() {
+                    $('.tbclick').addClass("hover","green");
+                })
+                </script> -->
+
+                
+
+
+
+<div>
+   
+
+       
+   
+        <section>
+            <ul id="partners">
+                <li class="partner">
+                    <img src="images/partners/partner-bustour.png" alt="Partner Bus Tours">
+                </li>
+                <li class="partner">
+                    <img src="images/partners/partner-cabinrental.png" alt="Partner Cabin Rental">
+                </li>
+                <li class="partner">
+                    <img src="images/partners/partner-campingadv.png" alt="Partner Camping Adventure">
+                </li>
+                <li class="partner">
+                    <img src="images/partners/partner-collegetours.png" alt="Partner College Tours">
+                </li>
+                <li class="partner">
+                    <img src="images/partners/partner-rentalbike.png" alt="Partner Bike Rentals">
+                </li>
+                <li class="partner">
+                    <img src="images/partners/partner-tourgroup.png" alt="Partner Tour Group">
+                </li>
+            </ul>
+            </section>
+    
+</div>
+
+<footer>
+        <!-- <div id="nondisclaimer"></div>
+            <div class="copy"></div>
+            <div class="social">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-instagram"></a>
+                <a href="#" class="fa fa-instagram"></a>
+            </div> -->
+
+            <script src="js/activity.js"></script>
+        
+                
+
+
+
+
+            </div>
+        <div id="disclaimer"></div>
+        <p>Copyright 2020 :: GreatCliffs.com
+        </p>
+    </footer>
+</body>
+</html>

@@ -20,10 +20,49 @@
  
         /* div[class^="col"]{
  
-         border: 1px solid black;
+         border: 1px solid black;       
         }
   */
     </style>
+
+<script>
+
+$(document).ready(function() {
+    $("td").click(function() {
+
+        $(".tbclick").addClass("clickcolorchange");
+    
+    });
+});
+
+
+
+
+ $(document).ready(function(){
+     $("td").click(function(){
+         var content = $(this).text();
+
+         if (content !="Not Availble"){
+             $(this).toggleClass("tdhighlight");
+
+                if($(this).hasClass("tdhighlight")){
+                    $("#displaySelected").css("visibility","visible");
+                    $("#displaySelected").css("margin-top","2em");
+                    $("#result").append("<p>" + content + "</p>");
+                } else{
+                    $('#result p:contains('+content+')').remove();
+
+                    if($("#result").has("p").length == false) {
+                        $("#displaySelected").css('visibility','hidden');
+                        $('#displaySelected').css("margin-top","0");
+                    }
+                }
+         }
+     });
+ });
+
+
+</script>
 </head>
 
 <body id="activities">
@@ -68,7 +107,7 @@
             the table below:
         </p>
 
-        <table>
+        <table class="table">
             <caption>Activities at the Cliffs</caption>
             <thead>
                 <tr>
@@ -139,7 +178,7 @@
                 <img src="images/partners/partner-tourgroup.png" alt="Partner Tour Group">
             </li>
         </ul>
-    </section>
+        </section>
     <footer>
         <div id="nondisclaimer">
             <div class="copy">
